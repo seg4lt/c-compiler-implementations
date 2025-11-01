@@ -13,6 +13,7 @@ See the [contributing](#contributing) section for details on how to add your imp
   * [Ada](#ada)
   * [C](#c)
   * [C++](#c-1)
+  * [Cython](#cython)
   * [Go](#go)
   * [Haskell](#haskell)
   * [Jai](#jai)
@@ -51,13 +52,19 @@ For projects hosted elsewhere, use this format:
 
 * [LesleyLai/mcc](https://github.com/LesleyLai/mcc) - A C23 implementation. While loosely following the book, I also consulted other resources, and this implementation has notable deviations, including a handwritten lexer, name resolution within the parser, and a slightly different IR design.
 
+* [romainducrocq/wheelcc](https://github.com/romainducrocq/wheelcc) - An ISO C17 implementation for Linux and MacOS that depends only on Glibc, POSIX and bash. It covers 100% of the book (parts 1-3 + extra-credits, passes all the tests), with additions such as a handwritten lexer, support for includes and comprehensive error messages. The design follows the book, but many details have been changed and some compiler stages were combined. The project also builds in C++.
+
 ## C++
 
 * [Gnomeball/C-Compiler](https://github.com/Gnomeball/C-Compiler) - Implemented on Linux; only notable change from the intended design is the use of a byte code representation instead of an AST while parsing; so far only chapter one is 'complete', though it's extremely rough.
 
-* [romainducrocq/wheelcc](https://github.com/romainducrocq/wheelcc) - C++ (>=17) implementation for Linux: with some builtin preprocessing, comprehensive error messages with source locations and more features to come! (Part 1, 2 and extra-credits done. Part 3 in progress.)
-
 * [Sh0g0-1758/scarlet](https://github.com/Sh0g0-1758/scarlet) - C++ (>=20) implementation featuring multiline error recovery and CI-verified builds. Completed Part 1 with all extra credits. Implementation largely follows the book with deviations in semantic analysis stage. Parts 2/3 in active development targeting x86_64 (Linux/macOS). Roadmap includes extensive static analysis optimizations and a future machine learning framework. Built with CMake and tested across GCC/Clang.
+
+* [alexkowalenko/axc](https://github.com/alexkowalenko/axc) - Written in verbose C++23. Completed up to chapter 9 for the X86_64 architecture. Tested on MacOS and FreeBSD.
+
+## Cython
+
+* [romainducrocq/cube](https://github.com/romainducrocq/cube) - An early version of [romainducrocq/wheelcc](https://github.com/romainducrocq/wheelcc) that implements chapters 1 to 13, before switching the compiler implementation to C/C++. It will no longer receive updates.
 
 ## Go
 
@@ -86,6 +93,9 @@ For projects hosted elsewhere, use this format:
   device!). Follows the book fairly closely. Has no dependencies
   beyond the OCaml stdlib.
 
+* [Maruncho/C-Toy-Compiler](https://github.com/Maruncho/C-Toy-Compiler) - [WIP] Will cover all chapters and all extra credit features, plus some extra stuff I find interesting.
+  My implementation differs mainly in its type checking, which is performed during parsing rather than in a separate pass, with the intent of adding typedef support in the future.
+
 ## Perl
 
 * [sir-galahad/adcc](https://github.com/sir-galahad/adcc) - C compiler in Perl, for Linux seemed like a good idea, Perl hashes make it quick to build complex data structures.
@@ -105,3 +115,11 @@ For projects hosted elsewhere, use this format:
 * [ysono/compiler-c-sandler](https://github.com/ysono/compiler-c-sandler/) - Implementation details diverge from the book's instructions in various ways. The behavior is consistent with the way the book clamps down on undefined behaviors. Tested on Linux and Intel Mac. Work in progress.
 
 * [asibahi/trjm](https://github.com/asibahi/trjm/) - Lexer and Parser written using parser combinator library `nom` and `nom-language`, but otherwise faithful to the book. As of Mar 16 it is up to chapter 13 (doubles), including extra features.
+
+* [oddsoc/EdgehammerC](https://github.com/oddsoc/EdgehammerC/) - An in-development implementation supporting all features through chapter 11 (including extra-credit), with commits corresponding to each completed chapter. It closely follows *Writing a C Compiler*, with some deviations in implementation details.
+
+* [rlivings39/learning-compilers](https://github.com/rlivings39/learning-compilers) - In-progress implementation that is my first introduction to Rust as well. Mostly follows the book. I added source location tracking to give good error messages in the lexer and parser. Contains my original implementation in TypeScript.
+
+## Zig
+
+* [asibahi/paella](https://github.com/asibahi/paella) - Straightforward implementation in Zig 0.14.0, with some ideas from the Zig compiler itself. Currently halfway to chapter 5 (variables).
